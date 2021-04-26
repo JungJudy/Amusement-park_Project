@@ -1,5 +1,6 @@
 package Playground;
 
+
 public class OutputClass {
 	
 	public void printTicketType() {
@@ -38,4 +39,14 @@ public class OutputClass {
 		System.out.println("1.티켓 발권");
 		System.out.println("2.종료");
 	}
+	
+	
+	
+
+	public void printProgramContinue() {
+		System.out.printf("계속 진행(1: 새로운 주문, 2:프로그램 종료) : ");
+		
+	}
+
+
 }

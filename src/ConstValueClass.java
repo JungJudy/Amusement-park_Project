@@ -15,4 +15,8 @@ public class ConstValueClass {
 	final static int MIN_COUNT = 1, MAX_COUNT = 10;
 	//가격
 	final static int[] price = {56000,46000,47000,40000,44000,37000,44000,37000,0};
+	//이어서 주문 or 종료
+	final static int ORDER_CONTINUE = 1, ORDER_EXIT = 2;
+	//프로그램 주문 or 종료
+	final static int PROGRAM_CONTINUE = 1, PROGRAM_EXIT = 2;
 }

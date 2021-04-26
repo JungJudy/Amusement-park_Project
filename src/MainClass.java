@@ -8,42 +8,37 @@ public class MainClass {
 		PlaygroundTypeClass pgType;
 		InputFromConsoleClass input = new InputFromConsoleClass();
 		ProcessingClass pc = new ProcessingClass();
-		
+		FileWriteClass fwc = new FileWriteClass();
+
 		while (true) {
-		pgType = new PlaygroundTypeClass();
-		//티켓타입 선택 문구 출력
-		output.printTicketType();
-		//티켓타입 입력받기
-		input.selectTicekType(pgType);
-		//주민등록번호 문구 출력
-		output.printIDNumber();
-		//주민번호 입력받기
-		input.inputID_Number(pgType);
-		//나이계산
-		pc.calAge(pgType);
-		//나이 그룹 계산
-		pc.calAgeGroup(pgType);
-		//주문 갯수 문구 출력
-		output.printOrderCount();
-		//주문 갯수 입력받기
-		input.inputOrderCount(pgType);
-		//나이에 따른 금액 계산
-		pc.calPrice(pgType);
-		//우대사항 문구 출력
-		output.printDiscount();
-		//우대사항 입력받기
-		input.inputDiscountType(pgType);
-		//우대사항 할인
-		pc.calDiscount(pgType);
-		//주문갯수와 우대사항에 따른 결제금액
-		pc.calPriceResult(pgType);
-		//가격 출력
-		output.printPriceResult(pgType);
-		//이어서 주문 or 종료 문구 출력
-		output.printOrderContinue();
-		//이어서 주문 or 종료 입력받기
-		input.orderContinue(pgType);
+			pgType = new PlaygroundTypeClass();
+			
+			while(true) {
+				//티켓타입,주민번호,주문 갯수,우대사항 입력받기
+				input.selectTicekType(pgType);
+				input.inputID_Number(pgType);
+				input.inputOrderCount(pgType);
+				input.inputDiscountType(pgType);
+				
+				//나이,그룹,나이에 따른 금액,우대사항 할인, 주문갯수와 우대사항에 따른 결제금액 계산
+				pc.calAge(pgType);
+				pc.calAgeGroup(pgType);
+				pc.calPrice(pgType);
+				pc.calDiscount(pgType);
+				pc.calPriceResult(pgType,output);
+
+				//정리 내용 저장
+				pc.TotalResult(pgType);
+				
+				//이어서 주문 or 종료 입력받기
+				input.orderContinue(pgType);
+				if (pgType.orderContinueType == ConstValueClass.ORDER_EXIT) break;
+			}
+			
+			input.programContinue(pgType);
+			if (pgType.programConinueType == ConstValueClass.PROGRAM_EXIT) break;
 		}
+
 	}
 
 }

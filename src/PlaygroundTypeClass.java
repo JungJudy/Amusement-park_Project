@@ -1,5 +1,7 @@
 package Playground;
 
+import java.util.ArrayList;
+
 public class PlaygroundTypeClass {
 	int ticketType;
 	String ticktTypeStr;
@@ -18,6 +20,10 @@ public class PlaygroundTypeClass {
 	int customerDay;
 	int ageGroup;
 	String ageGroupStr;
-	String aa; 
+	int orderContinueType;
+	int programConinueType;
+	String orderDate;
+	
+	ArrayList<String> outputResult = new ArrayList<String>();
 	
 }

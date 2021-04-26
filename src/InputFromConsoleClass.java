@@ -11,6 +11,7 @@ public class InputFromConsoleClass {
 		output = new OutputClass();
 	}
 	public void selectTicekType(PlaygroundTypeClass pgType) {
+		output.printTicketType();
 		while(true) {
 			pgType.ticketType = scanner.nextInt();
 			if (pgType.ticketType >= ConstValueClass.DAY_PRICE_TYPE && pgType.ticketType <= ConstValueClass.NIGHT_PRICE_TYPE) {
@@ -28,6 +29,7 @@ public class InputFromConsoleClass {
 	}
 
 	public void inputID_Number(PlaygroundTypeClass pgType) {
+		output.printIDNumber();
 		while(true) {
 			pgType.customerID_Number = scanner.next();
 			if (pgType.customerID_Number.length() == 14 && pgType.customerID_Number.contains("-")) {
@@ -42,6 +44,7 @@ public class InputFromConsoleClass {
 		}
 	}
 	public void inputOrderCount(PlaygroundTypeClass pgType) {
+		output.printOrderCount();
 		while(true) {
 			pgType.orderCount = scanner.nextInt();
 			if (pgType.orderCount >= ConstValueClass.MIN_COUNT && pgType.orderCount <= ConstValueClass.MAX_COUNT) {
@@ -55,6 +58,7 @@ public class InputFromConsoleClass {
 		
 	}
 	public void inputDiscountType(PlaygroundTypeClass pgType) {
+		output.printDiscount();
 		while(true) {
 			pgType.discountType	= scanner.nextInt();
 			if (pgType.discountType == ConstValueClass.NOT_DISCOUNT) {
@@ -71,6 +75,10 @@ public class InputFromConsoleClass {
 				break;
 			} else if (pgType.discountType == ConstValueClass.MULTICHILD_DISCOUNT_TYPE) {
 				pgType.discountRate = ConstValueClass.MULTICHILD_DISCOUNT_RATE;
+				pgType.discountTypeStr = "*다자녀 우대적용";
+				break;
+			} else if (pgType.discountType == ConstValueClass.PREGNANT_DISCOUNT_TYPE) {
+				pgType.discountRate = ConstValueClass.PREGNANT_DISCOUNT_RATE;
 				pgType.discountTypeStr = "*임산부 우대적용";
 				break;
 			} else {
@@ -80,7 +88,27 @@ public class InputFromConsoleClass {
 		
 	}
 	public void orderContinue(PlaygroundTypeClass pgType) {
+		output.printOrderContinue();
+		while(true) {
+			pgType.orderContinueType = scanner.nextInt();
+			if (pgType.orderContinueType == ConstValueClass.ORDER_CONTINUE || pgType.orderContinueType == ConstValueClass.ORDER_EXIT) {
+				break;
+			} else {
+				System.out.println("[1. 티켓발권 2.종료]다시 선택해주세요.");
+			}
+		}
 		
-		
+	}
+	public void programContinue(PlaygroundTypeClass pgType) {
+		// TODO Auto-generated method stub
+		output.printProgramContinue();
+		while (true) {
+			pgType.programConinueType = scanner.nextInt();
+			if (pgType.programConinueType == ConstValueClass.PROGRAM_CONTINUE || pgType.programConinueType == ConstValueClass.PROGRAM_EXIT) {
+				break;
+			} else {
+				System.out.println("[1:새로운 주문, 2:프로그램 종료]다시 선택해주세요.");
+			}
+		}
 	}
 }
