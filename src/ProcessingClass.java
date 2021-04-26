@@ -109,10 +109,15 @@ public class ProcessingClass {
 		output.printPriceResult(pgType);
 
 	}
-	public void TotalResult(PlaygroundTypeClass pgType) {
-		String result = cutStr(pgType.ticktTypeStr + "," ,12) + cutStr(pgType.ageGroupStr + ",", 14) + cutStr((pgType.orderCount + ","),10) + cutStr(pgType.discountTypeStr + ",",30);
+	public void TotalResult(PlaygroundTypeClass pgType, OutputClass output) {
+		String result = pgType.orderDate + ",";
+		result += pgType.ticktTypeStr + ",";
+		result += pgType.ageGroupStr + ","; 
+		result += pgType.orderCount + ",";
+		result += pgType.priceResult + ",";
+		result += pgType.discountTypeStr;
 		pgType.outputResult.add(result);
-
+		
 	}
 	
 	public static String cutStr(String K37_inputStr, int maxByte) {

@@ -63,23 +63,23 @@ public class InputFromConsoleClass {
 			pgType.discountType	= scanner.nextInt();
 			if (pgType.discountType == ConstValueClass.NOT_DISCOUNT) {
 				pgType.discountRate = ConstValueClass.NOT_DISCOUNT_RATE;
-				pgType.discountTypeStr = "*우대적용 없음";
+				pgType.discountTypeStr = "없음";
 				break;
 			} else if (pgType.discountType == ConstValueClass.DISABLE_DISCOUNT_TYPE) {
 				pgType.discountRate = ConstValueClass.DISABLE_DISCOUNT_RATE;
-				pgType.discountTypeStr = "*장애인 우대적용";
+				pgType.discountTypeStr = "장애인";
 				break;
 			} else if (pgType.discountType == ConstValueClass.NATIONAL_MERIT_DISCOUNT_TYPE) {
 				pgType.discountRate = ConstValueClass.NATIONAL_MERIT_DISCOUNT_RATE;
-				pgType.discountTypeStr = "*국가유공자 우대적용";
+				pgType.discountTypeStr = "국가유공자";
 				break;
 			} else if (pgType.discountType == ConstValueClass.MULTICHILD_DISCOUNT_TYPE) {
 				pgType.discountRate = ConstValueClass.MULTICHILD_DISCOUNT_RATE;
-				pgType.discountTypeStr = "*다자녀 우대적용";
+				pgType.discountTypeStr = "다자녀";
 				break;
 			} else if (pgType.discountType == ConstValueClass.PREGNANT_DISCOUNT_TYPE) {
 				pgType.discountRate = ConstValueClass.PREGNANT_DISCOUNT_RATE;
-				pgType.discountTypeStr = "*임산부 우대적용";
+				pgType.discountTypeStr = "임산부";
 				break;
 			} else {
 				System.out.println("우대사항을 확인하고 다시 선택해주시기 바랍니다.");

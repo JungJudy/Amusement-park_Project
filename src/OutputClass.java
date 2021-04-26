@@ -40,12 +40,27 @@ public class OutputClass {
 		System.out.println("2.종료");
 	}
 	
-	
-	
-
 	public void printProgramContinue() {
 		System.out.printf("계속 진행(1: 새로운 주문, 2:프로그램 종료) : ");
 		
+	}
+
+	public void printTotalResult(PlaygroundTypeClass pgType) {
+		// TODO Auto-generated method stub
+		System.out.println("=============================에버랜드=============================");
+		//System.out.println(pgType.outputResult);
+		String temp = pgType.outputResult.toString().replace(']', ' ');
+		
+			temp.replace('[', ' ');
+			//temp.replace(']', ' ');
+			temp.trim();
+		
+		String[] temp2 = temp.split(",");
+		for(int i = 0; i < temp2.length/6; i++) {
+			System.out.println(ProcessingClass.cutStr(temp2[6*i+1], 10)+ ProcessingClass.cutStr(temp2[6*i+2]+ "  X  " , 14) + ProcessingClass.cutStr(temp2[6*i+3], 8) + 
+					ProcessingClass.cutStr(temp2[6*i+4] + "원", 16) + ProcessingClass.cutStr(temp2[6*i+5], 30));
+		}
+		System.out.println("================================================================");
 	}
 
 

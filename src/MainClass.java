@@ -1,8 +1,10 @@
 package Playground;
 
+import java.io.IOException;
+
 public class MainClass {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		OutputClass output = new OutputClass();
 		PlaygroundTypeClass pgType;
@@ -28,16 +30,22 @@ public class MainClass {
 				pc.calPriceResult(pgType,output);
 
 				//정리 내용 저장
-				pc.TotalResult(pgType);
+				pc.TotalResult(pgType,output);
 				
 				//이어서 주문 or 종료 입력받기
 				input.orderContinue(pgType);
 				if (pgType.orderContinueType == ConstValueClass.ORDER_EXIT) break;
+				
 			}
-			
+			output.printTotalResult(pgType);
+			fwc.headerWrite();
+			fwc.dataWrite(pgType);
 			input.programContinue(pgType);
-			if (pgType.programConinueType == ConstValueClass.PROGRAM_EXIT) break;
+			if (pgType.programConinueType == ConstValueClass.PROGRAM_EXIT) {
+				break;
+			}
 		}
+		fwc.fileClose();
 
 	}
 
