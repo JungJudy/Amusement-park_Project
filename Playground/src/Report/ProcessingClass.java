@@ -7,8 +7,6 @@ import java.io.IOException;
 import java.util.Collections;
 
 
-
-
 public class ProcessingClass {
 
 	public void CountDayNightTicket(ReportTypeClass rpType, OutputClass output) throws IOException {
@@ -51,7 +49,6 @@ public class ProcessingClass {
 			}
 		}
 		reader.close();
-
 		output.PrintDayNight(rpType);
 
 	}
@@ -83,31 +80,39 @@ public class ProcessingClass {
 	public void sortDate(ReportTypeClass rpType) throws IOException {
 		BufferedReader reader = new BufferedReader(new FileReader("ticketResult.csv"));
 		String readline;
-		
+
 		while((readline = reader.readLine()) != null) {
 			String[] field = readline.split(",");
 			rpType.date_hash.add(field[0]);
-			
+
 		}
+		reader.close();
 		rpType.date_al.addAll(rpType.date_hash);
 		Collections.sort(rpType.date_al);
+
+	}
+
+	public void dateResult(ReportTypeClass rpType, OutputClass output) throws IOException {
+		BufferedReader reader = new BufferedReader(new FileReader("ticketResult.csv"));
+		String readline;
+		int[] totalprice = new int[rpType.date_al.size()-1];
+
+		while((readline = reader.readLine()) != null) {
+			String[] field = readline.split(",");
+			for (int i = 0; i < rpType.date_al.size()-1; i++) {
+				if (rpType.date_al.get(i).equals(field[0])) {
+					totalprice[i] += Integer.parseInt(field[4]);
+				}
+			}
+		}
 		
-//		
-//		int i = 0;
-//		
-//		while((readline = reader.readLine()) != null) {
-//			String[] field = readline.split(",");
-//			
-//				if (rpType.date_al.get(i) == field[0]) {
-//					rpType.dateTotalPrice[i] += Integer.parseInt(field[4]);
-//					System.out.println(rpType.dateTotalPrice[i]);
-//				
-//			}
-//				if (i == rpType.date_al.size()-1) break;
-//			i++;
-//		}
-//		
+		reader.close();
 		
+		for (int i = 0; i < rpType.date_al.size()-1; i++) {
+			rpType.dateTotalPrice_al.add(totalprice[i]);
+		}
+		
+		output.dateResult(rpType);
 	}
 
 }

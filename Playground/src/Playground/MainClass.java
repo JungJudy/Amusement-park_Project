@@ -1,7 +1,11 @@
 package Playground;
 
 import java.io.IOException;
-
+/*
+ * 210429
+ * @kopo37 (정현정)
+ * 놀이공원 티켓 발권 프로그램 메인클래스
+ */
 public class MainClass {
 
 	public static void main(String[] args) throws IOException {
