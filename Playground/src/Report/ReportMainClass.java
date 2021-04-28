@@ -13,7 +13,7 @@ public class ReportMainClass {
 		
 		pc.CountDayNightTicket(rpType,output);
 		pc.DiscountResult(rpType,output);
-		pc.Dateresult(rpType,output);
+		pc.sortDate(rpType);
 		
 
 	}

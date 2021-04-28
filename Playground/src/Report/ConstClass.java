@@ -8,7 +8,7 @@ public class ConstClass {
 	//권종별
 	final static String DAY_TICKET = "주간권", NIGHT_TICKET = "야간권";
 	//연령그룹별
-	final static String ADULT = "대인", TEEN = "청소년", CHILD = "소인", OLD = "경로", BABY = "유아";
+	final static String ADULT = "대인", TEEN = "청소년", CHILD = "소인", OLD = "경로", BABY = "유아(무료)";
 	
 	
 	

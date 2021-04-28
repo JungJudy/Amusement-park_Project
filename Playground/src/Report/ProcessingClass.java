@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Collections;
+
 
 
 
@@ -73,22 +75,38 @@ public class ProcessingClass {
 			} 
 
 		}
-
+		reader.close();
 		output.PrintDiscount(rpType);
 
 	}
 
-	public void Dateresult(ReportTypeClass rpType, OutputClass output) throws IOException {
+	public void sortDate(ReportTypeClass rpType) throws IOException {
 		BufferedReader reader = new BufferedReader(new FileReader("ticketResult.csv"));
 		String readline;
 		
 		while((readline = reader.readLine()) != null) {
 			String[] field = readline.split(",");
-		
-			
+			rpType.date_hash.add(field[0]);
 			
 		}
+		rpType.date_al.addAll(rpType.date_hash);
+		Collections.sort(rpType.date_al);
 		
+//		
+//		int i = 0;
+//		
+//		while((readline = reader.readLine()) != null) {
+//			String[] field = readline.split(",");
+//			
+//				if (rpType.date_al.get(i) == field[0]) {
+//					rpType.dateTotalPrice[i] += Integer.parseInt(field[4]);
+//					System.out.println(rpType.dateTotalPrice[i]);
+//				
+//			}
+//				if (i == rpType.date_al.size()-1) break;
+//			i++;
+//		}
+//		
 		
 	}
 
