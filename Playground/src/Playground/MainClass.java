@@ -28,6 +28,7 @@ public class MainClass {
 				pc.calPrice(pgType);
 				pc.calDiscount(pgType);
 				pc.calPriceResult(pgType,output);
+				pc.finalTotalPriceResult(pgType);
 
 				//정리 내용 저장
 				pc.TotalResult(pgType,output);
@@ -37,6 +38,7 @@ public class MainClass {
 				if (pgType.orderContinueType == ConstValueClass.ORDER_EXIT) break;
 				
 			}
+			
 			output.printTotalResult(pgType);
 			fwc.headerWrite();
 			fwc.dataWrite(pgType);

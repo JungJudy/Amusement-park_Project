@@ -13,6 +13,7 @@ public class PlaygroundTypeClass {
 	int discountType;
 	String discountTypeStr;
 	double discountRate;
+	int finalTotalPriceResult;
 	
 	String customerID_Number;
 	int KoreanAge; //한국나이

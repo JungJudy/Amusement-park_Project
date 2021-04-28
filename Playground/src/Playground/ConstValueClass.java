@@ -22,5 +22,5 @@ public class ConstValueClass {
 	//프로그램 주문 or 종료
 	final static int PROGRAM_CONTINUE = 1, PROGRAM_EXIT = 2;
 	//파일 경로
-	final static File file = new File("C:\\Users\\정현정\\Documents\\과제\\김유두교수님\\ticketResult.csv");
+	final static File file = new File("ticketResult.csv");
 }
