@@ -2,7 +2,7 @@ package k37_Amusement_park;
 
 import java.util.ArrayList;
 
-public class PlaygroundTypeClass {
+public class TypeClass {
 	int ticketType;
 	String ticktTypeStr;
 	

@@ -9,7 +9,7 @@ public class ProcessingClass {
 	ProcessingClass() {
 		calendar = Calendar.getInstance();
 	}
-	public void calAge(PlaygroundTypeClass pgType) {
+	public void calAge(TypeClass pgType) {
 		// TODO Auto-generated method stub
 		char customer_Generation = pgType.customerID_Number.charAt(7);
 		//년 구하기
@@ -36,7 +36,7 @@ public class ProcessingClass {
 		}
 
 	}
-	public void calAgeGroup(PlaygroundTypeClass pgType) {
+	public void calAgeGroup(TypeClass pgType) {
 		if (pgType.Age >= ConstValueClass.MIN_ADULT && pgType.Age <= ConstValueClass.MAX_ADULT) {
 			pgType.ageGroup = ConstValueClass.ADULT;
 			pgType.ageGroupStr = "대인";
@@ -55,7 +55,7 @@ public class ProcessingClass {
 		}
 
 	}
-	public void calPrice(PlaygroundTypeClass pgType) {
+	public void calPrice(TypeClass pgType) {
 		if (pgType.ageGroup == ConstValueClass.ADULT) {
 
 			if (pgType.ticketType == ConstValueClass.DAY_PRICE_TYPE) {
@@ -99,17 +99,17 @@ public class ProcessingClass {
 		} 
 
 	}
-	public void calDiscount(PlaygroundTypeClass pgType) {
+	public void calDiscount(TypeClass pgType) {
 		pgType.ticketPrice = (int) (pgType.ticketPrice * (1 - pgType.discountRate));
 
 	}
 
-	public void calPriceResult(PlaygroundTypeClass pgType, OutputClass output) {
+	public void calPriceResult(TypeClass pgType, OutputClass output) {
 		pgType.priceResult = pgType.ticketPrice * pgType.orderCount;
 		output.printPriceResult(pgType);
 
 	}
-	public void TotalResult(PlaygroundTypeClass pgType, OutputClass output) {
+	public void TotalResult(TypeClass pgType, OutputClass output) {
 		pgType.outputResult.add(pgType.orderDate);
 		pgType.outputResult.add(pgType.ticktTypeStr);
 		pgType.outputResult.add(pgType.ageGroupStr);
@@ -120,7 +120,7 @@ public class ProcessingClass {
 	}
 	
 	
-	public void finalTotalPriceResult(PlaygroundTypeClass pgType) {
+	public void finalTotalPriceResult(TypeClass pgType) {
 		pgType.finalTotalPriceResult += pgType.priceResult;
 		
 	}

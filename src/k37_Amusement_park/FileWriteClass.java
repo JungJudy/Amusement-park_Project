@@ -24,7 +24,7 @@ public class FileWriteClass {
 		} 
 	}
 	
-	public void dataWrite(PlaygroundTypeClass pgType) throws IOException {
+	public void dataWrite(TypeClass pgType) throws IOException {
 		String line = null;
 		for (int i = 0; i < pgType.outputResult.size()/6; i++) {
 			line = pgType.outputResult.get(i*6) + "," + pgType.outputResult.get((i*6)+1) + ","+ pgType.outputResult.get((i*6)+2) + ","+ pgType.outputResult.get((i*6)+3) + ","+ 

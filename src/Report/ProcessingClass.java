@@ -15,32 +15,32 @@ public class ProcessingClass {
 
 		while((readline = reader.readLine()) != null) {
 			String[] field = readline.split(",");
-			if(field[1].equals(ConstClass.DAY_TICKET)) {
-				if (field[2].equals(ConstClass.ADULT)) {
+			if(field[1].equals(ReportConstClass.DAY_TICKET)) {
+				if (field[2].equals(ReportConstClass.ADULT)) {
 					rpType.dayAdultCount += Integer.parseInt(field[3]);
-				} else if (field[2].equals(ConstClass.TEEN)) {
+				} else if (field[2].equals(ReportConstClass.TEEN)) {
 					rpType.dayTeenCount += Integer.parseInt(field[3]);
-				} else if (field[2].equals(ConstClass.CHILD)) {
+				} else if (field[2].equals(ReportConstClass.CHILD)) {
 					rpType.dayChildCount += Integer.parseInt(field[3]);
-				} else if (field[2].equals(ConstClass.OLD)) {
+				} else if (field[2].equals(ReportConstClass.OLD)) {
 					rpType.dayOldCount += Integer.parseInt(field[3]);
-				} else if (field[2].equals(ConstClass.BABY)) {
+				} else if (field[2].equals(ReportConstClass.BABY)) {
 					rpType.daybabyCount += Integer.parseInt(field[3]);
 				}
 
 				rpType.dayTicketCount += Integer.parseInt(field[3]);;
 				rpType.dayTicketTotalPrice += Integer.parseInt(field[4]);
 
-			} else if (field[1].equals(ConstClass.NIGHT_TICKET)) {
-				if (field[2].equals(ConstClass.ADULT)) {
+			} else if (field[1].equals(ReportConstClass.NIGHT_TICKET)) {
+				if (field[2].equals(ReportConstClass.ADULT)) {
 					rpType.nightAdultCount += Integer.parseInt(field[3]);
-				} else if (field[2].equals(ConstClass.TEEN)) {
+				} else if (field[2].equals(ReportConstClass.TEEN)) {
 					rpType.nightTeenCount += Integer.parseInt(field[3]);
-				} else if (field[2].equals(ConstClass.CHILD)) {
+				} else if (field[2].equals(ReportConstClass.CHILD)) {
 					rpType.nightChildCount += Integer.parseInt(field[3]);
-				} else if (field[2].equals(ConstClass.OLD)) {
+				} else if (field[2].equals(ReportConstClass.OLD)) {
 					rpType.nightOldCount += Integer.parseInt(field[3]);
-				} else if (field[2].equals(ConstClass.BABY)) {
+				} else if (field[2].equals(ReportConstClass.BABY)) {
 					rpType.nightbabyCount += Integer.parseInt(field[3]);
 				}
 
@@ -59,15 +59,15 @@ public class ProcessingClass {
 
 		while((readline = reader.readLine()) != null) {
 			String[] field = readline.split(",");
-			if (field[5].equals(ConstClass.NOT_DISCOUNT)) {
+			if (field[5].equals(ReportConstClass.NOT_DISCOUNT)) {
 				rpType.not_Discount_Count += Integer.parseInt(field[3]);
-			} else if (field[5].equals(ConstClass.DISABLE_DISCOUNT)) {
+			} else if (field[5].equals(ReportConstClass.DISABLE_DISCOUNT)) {
 				rpType.disable_Discount_Count += Integer.parseInt(field[3]);
-			} else if (field[5].equals(ConstClass.NATIONAL_MERIT_DISCOUNT)) {
+			} else if (field[5].equals(ReportConstClass.NATIONAL_MERIT_DISCOUNT)) {
 				rpType.national_merit_Discount_Count += Integer.parseInt(field[3]);
-			} else if (field[5].equals(ConstClass.MULTICHILD_DISCOUNT)) {
+			} else if (field[5].equals(ReportConstClass.MULTICHILD_DISCOUNT)) {
 				rpType.multichild_Discount_Count += Integer.parseInt(field[3]);
-			} else if (field[5].equals(ConstClass.PREGNANT_DISCOUNT)) {
+			} else if (field[5].equals(ReportConstClass.PREGNANT_DISCOUNT)) {
 				rpType.pregnant_Discount_Count += Integer.parseInt(field[3]);
 			} 
 

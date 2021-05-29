@@ -28,7 +28,7 @@ public class OutputClass {
 		System.out.println("5.임산부");
 	}
 
-	public void printPriceResult(PlaygroundTypeClass pgType) {
+	public void printPriceResult(TypeClass pgType) {
 		// TODO Auto-generated method stub
 		System.out.printf("가격은 %d 원 입니다.\n감사합니다.\n\n", pgType.priceResult);
 	}
@@ -45,7 +45,7 @@ public class OutputClass {
 
 	}
 
-	public void printTotalResult(PlaygroundTypeClass pgType) {
+	public void printTotalResult(TypeClass pgType) {
 		// TODO Auto-generated method stub
 		String discountstr = "";
 		System.out.println("===============================에버랜드=================================");

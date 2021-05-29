@@ -13,7 +13,7 @@ public class InputFromConsoleClass {
 		scanner = new Scanner(System.in);
 		output = new OutputClass();
 	}
-	public void selectTicekType(PlaygroundTypeClass pgType) {
+	public void selectTicekType(TypeClass pgType) {
 		output.printTicketType();
 		while(true) {
 				pgType.ticketType = scanner.nextInt();
@@ -33,7 +33,7 @@ public class InputFromConsoleClass {
 		}
 	}
 
-	public void inputID_Number(PlaygroundTypeClass pgType) {
+	public void inputID_Number(TypeClass pgType) {
 		output.printIDNumber();
 		Calendar calendar = Calendar.getInstance();
 		SimpleDateFormat sdf = new SimpleDateFormat("yy");
@@ -67,7 +67,7 @@ public class InputFromConsoleClass {
 		}
 		
 	}
-	public void inputOrderCount(PlaygroundTypeClass pgType) {
+	public void inputOrderCount(TypeClass pgType) {
 		output.printOrderCount();
 		while(true) {
 			pgType.orderCount = scanner.nextInt();
@@ -81,7 +81,7 @@ public class InputFromConsoleClass {
 		} 
 
 	}
-	public void inputDiscountType(PlaygroundTypeClass pgType) {
+	public void inputDiscountType(TypeClass pgType) {
 		output.printDiscount();
 		while(true) {
 			pgType.discountType	= scanner.nextInt();
@@ -111,7 +111,7 @@ public class InputFromConsoleClass {
 		}
 
 	}
-	public void orderContinue(PlaygroundTypeClass pgType) {
+	public void orderContinue(TypeClass pgType) {
 		output.printOrderContinue();
 		while(true) {
 			pgType.orderContinueType = scanner.nextInt();
@@ -123,7 +123,7 @@ public class InputFromConsoleClass {
 		}
 
 	}
-	public void programContinue(PlaygroundTypeClass pgType) {
+	public void programContinue(TypeClass pgType) {
 		// TODO Auto-generated method stub
 		output.printProgramContinue();
 		while (true) {

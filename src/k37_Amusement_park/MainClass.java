@@ -7,13 +7,13 @@ public class MainClass {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		OutputClass output = new OutputClass();
-		PlaygroundTypeClass pgType;
+		TypeClass pgType;
 		InputFromConsoleClass input = new InputFromConsoleClass();
 		ProcessingClass pc = new ProcessingClass();
 		FileWriteClass fwc = new FileWriteClass();
 
 		while (true) {
-			pgType = new PlaygroundTypeClass();
+			pgType = new TypeClass();
 			
 			while(true) {
 				//티켓타입,주민번호,주문 갯수,우대사항 입력받기

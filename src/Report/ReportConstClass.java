@@ -2,7 +2,7 @@ package Report;
 
 import java.io.File;
 
-public class ConstClass {
+public class ReportConstClass {
 	final static File file = new File("ticketResult.csv");
 	
 	//±ÇÁ¾º°

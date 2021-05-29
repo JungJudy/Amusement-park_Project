@@ -8,13 +8,13 @@ public class OutputClass {
 	public void PrintDayNight(ReportTypeClass rpType) {
 		System.out.println("=========================권종 별 판매현황=========================");
 		System.out.printf("주간권 총 %d매\n",rpType.dayTicketCount);
-		System.out.printf("%s %d매, %s %d매, %s %d매, %s %d매, %s %d매\n",ConstClass.BABY,rpType.daybabyCount,ConstClass.CHILD,rpType.dayChildCount,
-				ConstClass.TEEN,rpType.dayTeenCount,ConstClass.ADULT,rpType.dayAdultCount,ConstClass.OLD,rpType.dayOldCount);
+		System.out.printf("%s %d매, %s %d매, %s %d매, %s %d매, %s %d매\n",ReportConstClass.BABY,rpType.daybabyCount,ReportConstClass.CHILD,rpType.dayChildCount,
+				ReportConstClass.TEEN,rpType.dayTeenCount,ReportConstClass.ADULT,rpType.dayAdultCount,ReportConstClass.OLD,rpType.dayOldCount);
 		System.out.printf("주간권 매출 : %d원\n\n",rpType.dayTicketTotalPrice);
 
 		System.out.printf("야간권 총 %d매\n",rpType.nightTicketCount);
-		System.out.printf("%s %d매, %s %d매, %s %d매, %s %d매, %s %d매\n",ConstClass.BABY, rpType.nightbabyCount,  ConstClass.CHILD,rpType.nightChildCount,
-				ConstClass.TEEN, rpType.nightTeenCount,  ConstClass.ADULT, rpType.nightAdultCount,  ConstClass.OLD, rpType.nightOldCount);
+		System.out.printf("%s %d매, %s %d매, %s %d매, %s %d매, %s %d매\n",ReportConstClass.BABY, rpType.nightbabyCount,  ReportConstClass.CHILD,rpType.nightChildCount,
+				ReportConstClass.TEEN, rpType.nightTeenCount,  ReportConstClass.ADULT, rpType.nightAdultCount,  ReportConstClass.OLD, rpType.nightOldCount);
 		System.out.printf("야간권 매출 : %d원\n\n",rpType.nightTicketTotalPrice);
 		System.out.println("------------------------------------------------------------------\n\n");
 	}
